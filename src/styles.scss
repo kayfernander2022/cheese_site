@@ -1,0 +1,98 @@
+// --------------------------
+// VARIABLES
+// --------------------------
+$maincolor: brown;
+$contrastcolor: gray;
+
+@mixin white-text-black-bg {
+  color: $contrastcolor;
+  background-color: $maincolor;
+}
+
+@mixin black-test-white-bg {
+  color: $maincolor;
+  background-color: $contrastcolor;
+}
+
+// --------------------------
+// Header
+// --------------------------
+
+nav {
+  @include white-text-black-bg;
+  display: flex;
+  justify-content: center;
+  
+
+  a {
+    @include white-text-black-bg;
+    div {
+      margin: 10px;
+      font-size: large;
+    }
+  }
+}
+
+// --------------------------
+// Form
+// --------------------------
+
+section,
+div {
+  form {
+    input {
+      @include white-text-black-bg;
+      padding: 10px;
+      font-size: 1.1em;
+      margin: 1px;
+
+      &[type="submit"]:hover {
+        @include black-test-white-bg;
+      }
+    }
+  }
+}
+
+// --------------------------
+// button
+// --------------------------
+
+button#delete {
+  @include white-text-black-bg;
+  display: block;
+  margin: auto;
+  font-size: 1.3em;
+  padding: 10px;
+}
+
+// --------------------------
+// images
+// --------------------------
+
+img {
+  width: 300px;
+  height: 300px;
+  border-radius: 90px;
+  object-fit: cover;
+}
+
+.container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+.card{
+  border: 1px brown solid;
+  border-radius: 5px;
+  padding: 10px;
+
+}
+.show-card{
+  border: 1px black solid;
+  border-radius: 5px;
+  padding: 10px;
+
+
+}
